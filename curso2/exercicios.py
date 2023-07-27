@@ -1,7 +1,9 @@
 from modelo import Filme, Serie
 
-filme1 = Filme("Vingadores guerra infinita", 2021, 160)
+filme1 = Filme("vingadores guerra infinita", 2021, 160)
 serie1 = Serie("Doctor Who", 1960, 2)
 
-print('O filme {} do ano de {} e tem {} minutos'. format(filme1.get_nome(), filme1.get_ano(), filme1.get_duracao()))
-print('A serie {} do ano de {} e tem {} minutos'. format(serie1.get_nome(), serie1.get_ano(), serie1.get_temporadas()))
+
+print(f'\nNome é {filme1.nome} do ano de {filme1.ano} e tem {filme1.duracao} min, atingiu a marca de {filme1.likes} likes\n')
+
+print(f'Nome é {serie1.nome} do ano de {serie1.ano} e tem {serie1.temporadas} temporadas, atingiu a marca de {serie1.likes} likes\n')

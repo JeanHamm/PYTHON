@@ -1,6 +1,23 @@
+       a = 0
 
-print("---------------------")
-print("Vamos começar o jogo")
-print("---------------------\n\n")
+       for i in range(30):
 
-print(' {} | {} | {} \n ---------\n {} | {} | {}  \n ---------\n {} | {} | {} \n'.format())
+        if a%2 == 0:
+
+            a += 1
+
+            continue
+
+        else:
+
+            if a%5 == 0:
+
+                break
+
+        else:
+
+            a += 3
+
+       print(a)
+
+Assinale a opç

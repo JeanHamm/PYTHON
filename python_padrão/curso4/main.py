@@ -1,6 +1,6 @@
 from extrator_url import ExtratorUrl
 
-url = 'bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar'
+url = 'bytebank.com/cambio?quantidade=98&moedaOrigem=real&moedaDestino=dolar'
 
 extrator_url = ExtratorUrl(url)
 extrator_url_2 = ExtratorUrl(url)

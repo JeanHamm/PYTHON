@@ -18,6 +18,15 @@ class Conta(Pessoa):
 
       def __str__(self):
         return f'-------- DADOS DO CLIENTE --------\n\nNome: {self.nome}\nData de nascimento: {self.nascimento}\nCPF: {self.cpf}\nRG: {self.rg}\nConta: {self.numero_conta}\nAgencia; 000{self.agencia}\nBanco: {self.banco}\n\nSALDO: {self.saldo}\nLIMITE: {self.limite}\n'
+      
+      def saca(self, valor):
+        if self.saldo >= valor:
+          self.saldo -= valor
+        else:
+          print('Você não tem saldo suficiente')
+
+      def deposita(self, valor):
+        self.saldo += valor
 
 class ContaCorrente(Conta):
     def __init__(self, nome, cpf, rg, nascimento):
@@ -27,6 +36,15 @@ class ContaCorrente(Conta):
     def __str__(self):
         return f'-------- DADOS DO CLIENTE --------\n\nNome: {self.nome}\nData de nascimento: {self.nascimento}\nCPF: {self.cpf}\nRG: {self.rg}\nConta: {self.numero_conta} - {self.codigo_da_conta}\nAgencia: 000{self.agencia}\nBanco: {self.banco}\n\nSALDO:{self.saldo}\nLIMITE: {self.limite}\n'
 
+    def saca(self, valor):
+      if self.saldo >= valor:
+          self.saldo -= valor
+      else:
+          print('Você não tem saldo suficiente')
+
+    def deposita(self, valor):
+        self.saldo += valor
+
 
 class ContaSalario(Conta):
     def __init__(self, nome, cpf, rg, nascimento):
@@ -35,11 +53,28 @@ class ContaSalario(Conta):
     
     def __str__(self):
         return f'-------- DADOS DO CLIENTE --------\n\nNome: {self.nome}\nData de nascimento: {self.nascimento}\nCPF: {self.cpf}\nRG: {self.rg}\nConta: {self.numero_conta} - {self.codigo_da_conta}\nAgencia: 000{self.agencia}\nBanco: {self.banco}\n\nSALDO:{self.saldo}\nLIMITE: {self.limite}\n'
+    
+    def saca(self, valor):
+      if self.saldo >= valor:
+        self.saldo -= valor
+      else:
+          print('Você não tem saldo suficiente')
 
-conta1 = ContaCorrente('Jean Michel Hamm', 13283434999, 133791809, 27122002)
-conta2 = ContaSalario('Emerson Jair Hamm', 31245142423, 3281631283, 16063213)
+    def deposita(self, valor):
+      self.saldo += valor
 
 
-print(conta1)
-print(conta2)
+steffany = ContaCorrente("steffanny miranda krul","04505740919","130931588","16/04/2001")
+jean = ContaSalario("jean michel hamm","04505740919","130931588","16/04/2001")
 
+steffany.deposita(100)
+jean.deposita(350)
+
+print(steffany)
+steffany.saca(50)
+
+print(steffany)
+
+print(jean)
+jean.saca(350)
+print(jean)

@@ -22,6 +22,7 @@ for i in range(quantidade_ingredientes):
     quantidade_usada[i] = float(input(f"Qual é o valor do pote do {ingrediente_n[i]} em reais? R$"))
     ingrediente_v[i] = custo_do_produto(valor_pote[i], tamanho_pote[i], quantidade_usada[i])
 
+quantidade_gerada = float(input("Quantas porções rende a receita: "))
 print('\n-------------- CUSTO DE CADA INGREDIENTE --------------\n')
 for i in range(quantidade_ingredientes):
     print(f'{ingrediente_n[i]} custa R${ingrediente_v[i]}')
@@ -29,7 +30,8 @@ for i in range(quantidade_ingredientes):
 
 print('\n-------------- VALOR TOTAL --------------\n')
 
-print(f'\nO valor total do {produto_n} é de R${valor_total}\n\n\n\n')
+print(f'\nO valor total do {produto_n} é de R${valor_total}\n')
+print(f'\nO valor de cada porção do {produto_n} é de R${(valor_total / quantidade_gerada)}\n')
 
 
 
